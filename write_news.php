@@ -6,8 +6,11 @@
                 <!-- titre de la news -->
                 <label for="title">Titre</label>
                 <input type="text" name="title" id="title">
-                <!-- message -->
-                <label for="content">Message</label>
+                <!-- message fr -->
+                <label for="content">Message FR</label>
+                <textarea type="text" name="content" id="content" rows="10" cols="30"></textarea>
+                <!-- message en -->
+                <label for="content">Message EN</label>
                 <textarea type="text" name="content" id="content" rows="10" cols="30"></textarea>
                 <!-- date -->
                 <input type="hidden" name="date_creation" id="date_creation" value="<?php echo date(" Y-m-d H:i:s "); ?>">
