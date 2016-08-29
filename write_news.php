@@ -3,15 +3,18 @@
             ?>
             <?php include('includes/header.php'); ?>
             <form action="posts/post_news.php" method="post">
-                <!-- titre de la news -->
-                <label for="title">Titre</label>
-                <input type="text" name="title" id="title">
+                <!-- titre fr -->
+                <label for="title_fr">Titre FR</label>
+                <input type="text" name="title_fr" id="title_fr">
+                <!-- titre en -->
+                <label for="title_en">Titre EN</label>
+                <input type="text" name="title_en" id="title_en">
                 <!-- message fr -->
-                <label for="content">Message FR</label>
-                <textarea type="text" name="content" id="content" rows="10" cols="30"></textarea>
+                <label for="content_fr">Message FR</label>
+                <textarea type="text" name="content_fr" id="content_fr" rows="10" cols="30"></textarea>
                 <!-- message en -->
-                <label for="content">Message EN</label>
-                <textarea type="text" name="content" id="content" rows="10" cols="30"></textarea>
+                <label for="content_en">Message EN</label>
+                <textarea type="text" name="content_en" id="content_en" rows="10" cols="30"></textarea>
                 <!-- date -->
                 <input type="hidden" name="date_creation" id="date_creation" value="<?php echo date(" Y-m-d H:i:s "); ?>">
                 <!-- envoyer -->

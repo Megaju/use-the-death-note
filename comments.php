@@ -3,20 +3,23 @@
 <!-- nouvelles et ses commentaires -->
 <?php
 // Récupération du billet
-$req = $bdd->prepare('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM news WHERE id = ?');
+$req = $bdd->prepare('SELECT id, title_fr, title_en, content_fr, content_en, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM news WHERE id = ?');
 $req->execute(array($_GET['news_number']));
 $donnees = $req->fetch();
 ?>
 
 <div class="new">
     <h3 class="new-title">
-        <?php echo '#' . htmlspecialchars($donnees['id']) . ' ' . htmlspecialchars($donnees['title']); ?>
+        <?php echo '#' . htmlspecialchars($donnees['id']) . ' ' . ($_SESSION['langue'] == 'fr' ? htmlspecialchars($donnees['title_fr']) : htmlspecialchars($donnees['title_en'])); ?>
         <i class="new-date date-float-r">le <?php echo $donnees['date_creation']; ?></i>
     </h3>
     
     <p class="new-content">
-    <?php
-    echo nl2br(htmlspecialchars($donnees['content']));
+    <?php if($_SESSION['langue'] == 'fr') {
+        echo nl2br(htmlspecialchars($donnees['content_fr']));
+    } else {
+        echo nl2br(htmlspecialchars($donnees['content_en']));
+    }
     ?>
     </p>
 </div>
