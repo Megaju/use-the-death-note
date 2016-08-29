@@ -33,7 +33,7 @@
                 <li><a href="how-to-use-it.php">How_to_use_it</a></li>
                 <li><a href="deathnote.php">écrire_un_nom</a></li>
                 <li><a href="news.php">actualités</a></li>
-                <li><a href="news.php">top_des_éxécutions</a></li>
+                <li><a href="topofdeath.php">top_des_éxécutions</a></li>
                 <li><a href="apple.php">pommes</a></li>
             </ul>
         </nav>
@@ -57,7 +57,7 @@
                 <li><a href="how-to-use-it.php">How_to_use_it</a></li>
                 <li><a href="deathnote.php">écrire_un_nom</a></li>
                 <li><a href="news.php">actualités</a></li>
-                <li><a href="news.php">top_des_éxécutions</a></li>
+                <li><a href="topofdeath.php">top_des_éxécutions</a></li>
                 <li><a href="apple.php">pommes</a></li>
             </ul>
         </nav>
