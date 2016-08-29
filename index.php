@@ -1,35 +1,83 @@
+<?php
+    session_start();
+    $_SESSION['langue'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    //$_SESSION['langue'] = 'en';
+?>
 <?php include('includes/header.php'); ?>
 
-<a href="deathnote.php" class="button">ALLER AU DEATHNOTE</a>
+<?php
+    if($_SESSION['langue'] == 'fr') { 
+?>
+   <!-- SITE FR -->
+   <a href="deathnote.php" class="button">OUVRIR LE DEATHNOTE</a>
 
-<div class="last-names">
-    <h2>Les 6 derniers noms inscrits</h2>
+    <div class="last-names">
+        <h2>Les 6 derniers noms inscrits</h2>
 
-    <?php
-            // Récupération des 6 derniers messages
-            $reponse = $bdd->query('SELECT nom, prenom, message, dateofdeath FROM deathnote ORDER BY ID DESC LIMIT 0, 6');
+        <?php
+                // Récupération des 6 derniers messages
+                $reponse = $bdd->query('SELECT nom, prenom, message, dateofdeath FROM deathnote ORDER BY ID DESC LIMIT 0, 6');
 
-            // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
-            while ($donnees = $reponse->fetch())
-                {
-                    echo '<p class="death">
-                    <strong>Nom :</strong> <span class="name">' . 
-                    htmlspecialchars($donnees['nom']) . 
-                    ' </span>' . 
-                    '<strong>Prénom :</strong><span class="name">' .
-                    htmlspecialchars($donnees['prenom']) .
-                    ' </span>' .
-                    '<strong>Cause :</strong> ' . 
-                    htmlspecialchars($donnees['message']) . 
-                    ' le ' . 
-                    htmlspecialchars($donnees['dateofdeath']) . 
-                    '</p>';
-                }
+                // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
+                while ($donnees = $reponse->fetch())
+                    {
+                        echo '<p class="death">
+                        <strong>Nom :</strong> <span class="name">' . 
+                        htmlspecialchars($donnees['nom']) . 
+                        ' </span>' . 
+                        '<strong>Prénom :</strong><span class="name">' .
+                        htmlspecialchars($donnees['prenom']) .
+                        ' </span>' .
+                        '<strong>Cause :</strong> ' . 
+                        htmlspecialchars($donnees['message']) . 
+                        ' le ' . 
+                        htmlspecialchars($donnees['dateofdeath']) . 
+                        '</p>';
+                    }
 
-            $reponse->closeCursor();
+                $reponse->closeCursor();
 
-    ?>
-</div>
+        ?>
+    </div>
+<?php
+    } else {
+?>
+   <!-- SITE EN -->
+   <a href="deathnote.php" class="button">OPEN THE DEATHNOTE</a>
+
+    <div class="last-names">
+        <h2>The 6 last names</h2>
+
+        <?php
+                // Récupération des 6 derniers messages
+                $reponse = $bdd->query('SELECT nom, prenom, message, dateofdeath FROM deathnote ORDER BY ID DESC LIMIT 0, 6');
+
+                // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
+                while ($donnees = $reponse->fetch())
+                    {
+                        echo '<p class="death">
+                        <strong>Name :</strong> <span class="name">' . 
+                        htmlspecialchars($donnees['nom']) . 
+                        ' </span>' . 
+                        '<strong>Last-name :</strong><span class="name">' .
+                        htmlspecialchars($donnees['prenom']) .
+                        ' </span>' .
+                        '<strong>Cause :</strong> ' . 
+                        htmlspecialchars($donnees['message']) . 
+                        ' le ' . 
+                        htmlspecialchars($donnees['dateofdeath']) . 
+                        '</p>';
+                    }
+
+                $reponse->closeCursor();
+
+        ?>
+    </div>    
+    
+<?php } ?>
+    
+
+
 
 
 <?php include('includes/footer.php'); ?>
