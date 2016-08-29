@@ -4,25 +4,51 @@
 
     <div class="flexbox">
         <section>
-            <h2>TOP des éxécutions que VOUS avez choisi</h2>
+           <?php
+            if ($_SESSION['langue'] == 'fr') {
+                echo '<h2>TOP 10 des éxécutions que VOUS avez choisi</h2>';
+            } else {
+                echo '<h2>TOP 10 des éxécutions que VOUS avez choisi</h2>';
+            }
+           ?>
             
             <div id="deathnote-style">
             <?php
-            // Récupération des 50 derniers messages
-            $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin et %ss\') AS dateofdeath, top FROM deathnote WHERE top = 1 ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
-
-            // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
-            while ($donnees = $reponse->fetch())
-            {
-                echo '<p class="death"> - ' . '<span class="name">' .
-                htmlspecialchars($donnees['prenom']) .
-                ' ' .
-                htmlspecialchars($donnees['nom']) . '</span>' .
-                ' <strong>Cause :</strong> ' . 
-                htmlspecialchars($donnees['message']) . 
-                ' le ' . 
-                htmlspecialchars($donnees['dateofdeath']) . 
-                '</p>';
+            if ($_SESSION['langue'] == 'fr') {
+                // Récupération des 50 derniers messages
+                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin\') AS dateofdeath, top FROM deathnote WHERE top = 1 ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+            } else {
+                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%m/%d/%Y at %Hh%imin\') AS dateofdeath, top FROM deathnote WHERE top = 1 ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+            }
+            
+            if ($_SESSION['langue'] == 'fr') {
+                // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
+                while ($donnees = $reponse->fetch())
+                {
+                    echo '<p class="death"> - ' . '<span class="name">' .
+                    htmlspecialchars($donnees['prenom']) .
+                    ' ' .
+                    htmlspecialchars($donnees['nom']) . '</span>' .
+                    ' <strong>Cause :</strong> ' . 
+                    htmlspecialchars($donnees['message']) . 
+                    ' le ' . 
+                    htmlspecialchars($donnees['dateofdeath']) . 
+                    '</p>';
+                }
+            } else {
+                // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
+                while ($donnees = $reponse->fetch())
+                {
+                    echo '<p class="death"> - ' . '<span class="name">' .
+                    htmlspecialchars($donnees['prenom']) .
+                    ' ' .
+                    htmlspecialchars($donnees['nom']) . '</span>' .
+                    ' <strong>Cause :</strong> ' . 
+                    htmlspecialchars($donnees['message']) . 
+                    ' the ' . 
+                    htmlspecialchars($donnees['dateofdeath']) . 
+                    '</p>';
+                }
             }
 
             $reponse->closeCursor();
