@@ -1,0 +1,304 @@
+/*
+Site: write in the death note
+URL: writeinthedeathnote.kijewoku.com
+Author: Julien Malle
+Version: 0.4
+*/
+
+/* ------ GENERAL ----- */
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+html {
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    color: #fff;
+    font-family: 'PT Mono', monospace;
+    border-top: 4px solid #222;
+    border-bottom: 4px solid #222;
+}
+
+header {
+    padding: 20px;
+    background-color: #333;
+    border-bottom: 1px dashed red;
+    border-top: 1px dashed red;
+}
+
+section {
+    width: 75%;
+    outline: 10px solid rgba(0, 0, 0, 0.5);
+    border: 1px dashed red;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+aside {
+    width: 25%;
+    height: 100vh;
+    outline: 10px solid rgba(0, 0, 0, 0.5);
+    border: 1px dashed red;
+    margin: 20px;
+    padding: 20px;
+    background-image: url(../images/rules.jpg);
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    background-size: 100%;
+    background-color: #000;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    height: 30vh;
+    text-align: center;
+    border-top: 1px dashed red;
+    border-bottom: 1px dashed red;
+}
+
+/* ----- TEXT ----- */
+h1 {
+    font-size: 46px;
+    font-weight: 400;
+    font-family: "DEATHNOTE Font", monospace;
+    text-transform: uppercase;
+}
+
+.last-names h2 {
+    text-align: center;
+}
+
+#slogan {
+    border-bottom: 1px solid #666;
+}
+
+/* ----- LINKS ------ */
+h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.actu {
+    width: 200px;
+    text-decoration: none;
+    color: #666;
+    display: block;
+    margin: 20px auto;
+}
+
+a.button {
+    display: block;
+    width: 30%;
+    height: 120px;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 120px;
+    color: red;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #444;
+    outline: 6px solid #444;
+    border: 1px dashed red;
+    transition: .6s;
+}
+    
+a.button:hover {
+    border-color: aqua;
+    background-color: #ddd;
+    outline-color: #ddd;
+    color: aqua;
+    transition: .6s;
+}
+
+/* ----- NAVIGATION ----- */
+nav {
+    text-align: center;
+}
+
+nav ul {
+    margin: 20px 0 0 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #eee;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+nav ul li:hover a {
+    color: red;
+}
+
+/* nav pagination */
+ul.pagination {
+    list-style: none;
+    text-align: center;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+ul.pagination li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    width: 15px;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    background-color: #222;
+    border: 1px solid #fff;
+}
+
+ul.pagination li.active a, ul.pagination li:hover a {
+    position: relative;
+    bottom: 1px;
+    color: #f00;
+    font-weight: 700;
+    border: 2px solid #f00;
+}
+
+/* ----- FORMS ----- */
+/* form de base */
+form {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #666;
+}
+
+label {
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    color: #666;
+    font-weight: 700;
+    border-bottom: 1px solid #666;
+}
+
+input {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    border: 0;
+}
+
+textarea {
+    padding: 10px;
+    color: #666;
+    border: 0;
+}
+/* autres form */
+.new {
+    width: 66.6vw;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: #222;
+    color: #eee;
+    border: 1px dashed red;
+    outline: 6px solid #222;
+}
+    
+.new a {
+    display: block;
+    margin: 20px 0 0 0;
+    color: #f00;
+}
+    
+.new-title {
+    margin: 0 0 10px 0;
+}
+    
+.new-date {
+    color: #999;
+    font-size: 12px;
+}
+
+.date-float-r {
+    vertical-align: baseline;
+    float: right;
+}
+
+.comment {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #666;
+}
+
+.comment .user {
+    color: #f00;
+}
+
+.death {
+    margin: 20px auto;
+}
+
+.name {
+    text-transform: capitalize;
+}
+
+/* ----- BLOCS DU SITE ----- */
+/* pour le contenue central du site */
+.flexbox {
+    padding: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 3px solid #222;
+}
+/* style du bloc où sont les noms */
+#deathnote-style {
+    background-color: #ddd;
+    color: #111;
+    padding: 40px;
+    margin: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2NkIADWbz3zP9DbhJFxVCG2EIAHD4hBKIhA8kSHIwAFXCc6ZL2aaQAAAABJRU5ErkJggg==);
+}
+/* bloc des derniers nom inscrit au niveau de index.php */
+.last-names {
+    padding: 6px 6px 6px 6px;
+    width: 666px;
+    margin: 66px auto;        
+    color: #222;
+    background-color: #eee;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJUlEQVQYV2NkIADWbz3zP9DbhJFxVCG2EIAHD4hBKIhA8kSHIwAFXCc6ZL2aaQAAAABJRU5ErkJggg==);
+}
+
+.rules {
+    margin: 20px auto;
+    padding: 40px;
+    width: 666px;
+}
+
+.rules h2 {
+    margin: 0 auto 40px auto;
+    width: 450px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.rules h2:first-child {
+    margin: 0 auto;
+    border-bottom: 0;
+}
+
+.rules li {
+    margin: 0 0 40px 0;
+}
