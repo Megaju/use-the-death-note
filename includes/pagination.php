@@ -1,6 +1,6 @@
 <?php
 
-$perPage = 5;
+$perPage = 6;
 
 $req = $bdd->query('SELECT COUNT(*) AS total FROM deathnote');
 $result = $req->fetch();

@@ -1,6 +1,6 @@
 <?php
 
-$perPage = 5;
+$perPage = 6;
 
 $req = $bdd->query('SELECT COUNT(id_news) AS total FROM comments WHERE id_news=' . $_GET['news_number']);
 $result = $req->fetch();
