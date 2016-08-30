@@ -1,11 +1,10 @@
-<?php
+<?php // FRENCH
     if($_SESSION['langue'] == 'fr') {
 ?>
         <footer>
             (c)DEATHNOTE, 2016. par J
         </footer>
-<?php
-    // ENGLISH
+<?php // ENGLISH
     } else {
 ?>
         <footer>

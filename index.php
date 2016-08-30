@@ -16,18 +16,15 @@
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                     {
-                        echo '<p class="death">
-                        <strong>Nom :</strong> <span class="name">' . 
-                        htmlspecialchars($donnees['nom']) . 
-                        ' </span>' . 
-                        '<strong>Prénom :</strong><span class="name">' .
-                        htmlspecialchars($donnees['prenom']) .
-                        ' </span>' .
-                        '<strong>Cause :</strong> ' . 
-                        htmlspecialchars($donnees['message']) . 
-                        ' le ' . 
-                        htmlspecialchars($donnees['dateofdeath']) . 
-                        '</p>';
+                        echo '<p class="death"> - ' . '<span class="name">' .
+                    htmlspecialchars($donnees['prenom']) .
+                    ' ' .
+                    htmlspecialchars($donnees['nom']) . '</span>' .
+                    ' <strong>Cause :</strong> ' . 
+                    htmlspecialchars($donnees['message']) . 
+                    ' le ' . 
+                    htmlspecialchars($donnees['dateofdeath']) . 
+                    '</p>';
                     }
 
                 $reponse->closeCursor();
@@ -50,18 +47,15 @@
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                     {
-                        echo '<p class="death">
-                        <strong>Name :</strong> <span class="name">' . 
-                        htmlspecialchars($donnees['nom']) . 
-                        ' </span>' . 
-                        '<strong>Last-name :</strong><span class="name">' .
-                        htmlspecialchars($donnees['prenom']) .
-                        ' </span>' .
-                        '<strong>Cause :</strong> ' . 
-                        htmlspecialchars($donnees['message']) . 
-                        ' le ' . 
-                        htmlspecialchars($donnees['dateofdeath']) . 
-                        '</p>';
+                        echo '<p class="death"> - ' . '<span class="name">' .
+                    htmlspecialchars($donnees['prenom']) .
+                    ' ' .
+                    htmlspecialchars($donnees['nom']) . '</span>' .
+                    ' <strong>Cause :</strong> ' . 
+                    htmlspecialchars($donnees['message']) . 
+                    ' the ' . 
+                    htmlspecialchars($donnees['dateofdeath']) . 
+                    '</p>';
                     }
 
                 $reponse->closeCursor();

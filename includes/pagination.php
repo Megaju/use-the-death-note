@@ -18,7 +18,7 @@ if (isset($_GET['p']) && !empty($_GET['p']) && ctype_digit($_GET['p']) == 1) {
         $current = $_GET['p'];
     }
 } else {
-    $current = 1; //page courante par défaut si pas besoin de pagination.
+    $current = 1; //page courante par défaut
 }
 
 //le 1er noms de la page

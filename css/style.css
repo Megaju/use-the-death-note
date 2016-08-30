@@ -111,10 +111,8 @@ a.button {
 }
     
 a.button:hover {
-    border-color: aqua;
-    background-color: #ddd;
-    outline-color: #ddd;
-    color: aqua;
+    border-color: #0ff;
+    color: #0ff;
     transition: .6s;
 }
 
