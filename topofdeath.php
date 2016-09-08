@@ -16,16 +16,17 @@
             <?php
             if ($_SESSION['langue'] == 'fr') {
                 // Récupération des 50 derniers messages
-                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin\') AS dateofdeath, top FROM deathnote WHERE note >= 1 ORDER BY ID DESC LIMIT 0, 10');
+                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin\') AS dateofdeath, note FROM deathnote WHERE note >= 1 ORDER BY ID DESC LIMIT 0, 10');
             } else {
-                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%m/%d/%Y at %Hh%imin\') AS dateofdeath, top FROM deathnote WHERE note >= 1 ORDER BY ID DESC LIMIT 0, 10');
+                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%m/%d/%Y at %Hh%imin\') AS dateofdeath, note FROM deathnote WHERE note >= 1 ORDER BY ID DESC LIMIT 0, 10');
             }
             
             if ($_SESSION['langue'] == 'fr') {
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p class="death"> - ' . '<span class="name">' .
+                    echo '<p class="death"> - ' . '<span class="name">' . ' <b>SCORE :</b> ' .
+                    htmlspecialchars($donnees['note']) . ' > ' .
                     htmlspecialchars($donnees['prenom']) .
                     ' ' .
                     htmlspecialchars($donnees['nom']) . '</span>' .
@@ -39,7 +40,8 @@
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p class="death"> - ' . '<span class="name">' .
+                    echo '<p class="death"> - ' . '<span class="name">' . ' <b>SCORE :</b> ' .
+                    htmlspecialchars($donnees['note']) . ' > ' .
                     htmlspecialchars($donnees['prenom']) .
                     ' ' .
                     htmlspecialchars($donnees['nom']) . '</span>' .
