@@ -52,7 +52,7 @@
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p class="death"> - ' . '<span class="name">' .
+                    echo '<p class="death"><a href="#" class="fa fa-thumbs-up"></a><a href="#" class="fa fa-thumbs-down"></a> - ' . '<span class="name">' .
                     htmlspecialchars($donnees['prenom']) .
                     ' ' .
                     htmlspecialchars($donnees['nom']) . '</span>' .

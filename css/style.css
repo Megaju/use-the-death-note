@@ -116,6 +116,44 @@ a.button:hover {
     transition: .6s;
 }
 
+footer p a {
+    font-size: 1em;
+    display: block;
+    margin: 25px 0;
+    color: #fff;
+    text-decoration: none;
+    cursor: none;
+    transition: 1s;
+}
+
+footer p a:hover {
+    color: #f00;
+    transition: 1s;
+}
+
+.fa-thumbs-down, .fa-thumbs-up {
+    text-decoration: none;
+    margin: 0 5px 0 0;
+}
+
+.fa-thumbs-up {
+    color: dodgerblue;
+}
+
+.fa-thumbs-up:hover {
+    position: relative;
+    bottom: 2px;
+}
+
+.fa-thumbs-down {
+    color: firebrick;
+}
+
+.fa-thumbs-down:hover {
+    position: relative;
+    top: 2px;
+}
+
 /* ----- NAVIGATION ----- */
 nav {
     text-align: center;
