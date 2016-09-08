@@ -131,27 +131,45 @@ footer p a:hover {
     transition: 1s;
 }
 
-.fa-thumbs-down, .fa-thumbs-up {
+.thumbs {
+    border: 0;
+    padding: 0;
+    display: inline;
+}
+
+.thumbs input {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: .8em;
+    font-weight: 700;
+}
+
+.thumb-down, .thumb-up {
     text-decoration: none;
     margin: 0 5px 0 0;
 }
 
-.fa-thumbs-up {
+.thumb-up {
     color: dodgerblue;
+    border: 1px solid dodgerblue;
 }
 
-.fa-thumbs-up:hover {
+.thumb-up:hover {
     position: relative;
     bottom: 2px;
+    cursor: pointer;
 }
 
-.fa-thumbs-down {
+.thumb-down {
     color: firebrick;
+    border: 1px solid firebrick;
 }
 
-.fa-thumbs-down:hover {
+.thumb-down:hover {
     position: relative;
     top: 2px;
+    cursor: pointer;
 }
 
 /* ----- NAVIGATION ----- */

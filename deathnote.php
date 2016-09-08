@@ -52,7 +52,7 @@
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p class="death"><form action="posts/thumb-up.php" method="post"><input type="hidden" name="note" id="note" value="' . $donnees['ID'] . '" class="fa fa-thumbs-up"><input type="submit"></form> - ' . '<span class="name">' .
+                    echo '<p class="death"><form action="posts/thumb-up.php" method="post" class="thumbs"><input type="hidden" name="note" id="note" value="' . $donnees['ID'] . '" class="fa fa-thumbs-up"><input type="submit" value="+1" class="thumb-up"></form><form action="posts/thumb-down.php" method="post" class="thumbs"><input type="hidden" name="note" id="note" value="' . $donnees['ID'] . '"><input type="submit" value="-1" class="thumb-down"></form> - ' . '<span class="name">' .
                     htmlspecialchars($donnees['prenom']) .
                     ' ' .
                     htmlspecialchars($donnees['nom']) . '</span>' .
