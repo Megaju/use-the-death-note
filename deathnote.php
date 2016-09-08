@@ -42,17 +42,17 @@
             <?php
             if($_SESSION['langue'] == 'fr') {
                 // Récupération des 50 derniers messages
-                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin\') AS dateofdeath FROM deathnote ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+                $reponse = $bdd->query('SELECT ID, nom, prenom, message, DATE_FORMAT(dateofdeath, \'%d/%m/%Y à %Hh%imin\') AS dateofdeath FROM deathnote ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
             } else {
                 // Récupération des 50 derniers messages
-                $reponse = $bdd->query('SELECT nom, prenom, message, DATE_FORMAT(dateofdeath, \'%m/%d/%Y at %Hh%imin\') AS dateofdeath FROM deathnote ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+                $reponse = $bdd->query('SELECT ID, nom, prenom, message, DATE_FORMAT(dateofdeath, \'%m/%d/%Y at %Hh%imin\') AS dateofdeath FROM deathnote ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
             }
 
             if ($_SESSION['langue'] == 'fr') {
                 // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p class="death"><a href="#" class="fa fa-thumbs-up"></a><a href="#" class="fa fa-thumbs-down"></a> - ' . '<span class="name">' .
+                    echo '<p class="death"><form action="posts/thumb-up.php" method="post"><input type="hidden" name="note" id="note" value="' . $donnees['ID'] . '" class="fa fa-thumbs-up"><input type="submit"></form> - ' . '<span class="name">' .
                     htmlspecialchars($donnees['prenom']) .
                     ' ' .
                     htmlspecialchars($donnees['nom']) . '</span>' .
