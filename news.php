@@ -1,5 +1,5 @@
 <?php include('includes/header.php'); ?>
-
+<div class="no-flex">
 <!-- Listes des 6 dernières nouvelles -->
 <?php
             
@@ -51,5 +51,5 @@
                     echo '<li><a href="?p=' . ($current + 1) . '">' . '&raquo;' . '</a></li>';   
                 ?>
             </ul>
-
+</div>
 <?php include('includes/footer.php'); ?>

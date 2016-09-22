@@ -1,5 +1,5 @@
 <?php include('includes/header.php'); ?>
-
+<div class="no-flex">
 <!-- NEWS ET SES COMMENTAIRES -->
 <?php
 // Récupération du billet
@@ -87,5 +87,5 @@ $donnees = $req->fetch();
 </ul>
 
 </section>
-
+</div>
 <?php include('includes/footer.php'); ?>

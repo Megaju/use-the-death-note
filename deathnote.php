@@ -1,7 +1,8 @@
-    <?php include('includes/header.php'); ?>
+    <?php 
+        include('includes/header.php');
+        include('includes/pagination.php');
+    ?>
     
-    <?php include('includes/pagination.php'); ?>
-
     <div class="flexbox">
         <section>
            <?php if($_SESSION['langue'] == 'fr') {?>

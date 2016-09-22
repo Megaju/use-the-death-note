@@ -1,5 +1,5 @@
 <?php include('includes/header.php'); ?>
-
+<div class="no-flex">
 <!-- I -->
 <?php
     if($_SESSION['langue'] == 'fr') { 
@@ -359,5 +359,5 @@
     echo 'To be continued...';
 }
 ?>
-
+</div>
 <?php include('includes/footer.php'); ?>

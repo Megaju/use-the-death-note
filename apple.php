@@ -1,5 +1,6 @@
 <?php include('includes/header.php'); ?>
 
+<div class="no-flex">
 
 <p class="count-apple">POMMES ACTUELLEMENT DONNÉES</p>
 <p class="count-apple apple">
@@ -40,6 +41,6 @@
     }
 </style>
 
-
+</div>
 
 <?php include('includes/footer.php'); ?>

@@ -4,6 +4,7 @@
     $perPage = 6;
 ?>
 
+<div class="no-flex">
 <?php
     if($_SESSION['langue'] == 'fr') { 
 ?>
@@ -26,6 +27,7 @@
     </div>    
     
 <?php } ?>
+</div>
     
 
 
