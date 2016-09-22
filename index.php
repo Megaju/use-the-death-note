@@ -1,4 +1,8 @@
-<?php include('includes/header.php'); ?>
+<?php 
+    include('includes/header.php'); 
+    $firstOfPage = 0;
+    $perPage = 6;
+?>
 
 <?php
     if($_SESSION['langue'] == 'fr') { 
@@ -18,28 +22,7 @@
 
     <div class="last-names">
         <h2>The 6 last names</h2>
-
-        <?php
-                // Récupération des 6 derniers messages
-                $reponse = $bdd->query('SELECT nom, prenom, message, dateofdeath FROM deathnote ORDER BY ID DESC LIMIT 0, 6');
-
-                // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
-                while ($donnees = $reponse->fetch())
-                    {
-                        echo '<p class="death"> - ' . '<span class="name">' .
-                    htmlspecialchars($donnees['prenom']) .
-                    ' ' .
-                    htmlspecialchars($donnees['nom']) . '</span>' .
-                    ' <strong>Cause :</strong> ' . 
-                    htmlspecialchars($donnees['message']) . 
-                    ' the ' . 
-                    htmlspecialchars($donnees['dateofdeath']) . 
-                    '</p>';
-                    }
-
-                $reponse->closeCursor();
-
-        ?>
+        <?php include('deathnote_names.php'); ?>
     </div>    
     
 <?php } ?>
