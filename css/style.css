@@ -114,6 +114,31 @@ a.button:hover {
     color: dodgerblue;
 }
 
+/* -- apple party -- :) */
+.give-an-apple {
+    background-image: url(../images/give_an_apple.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 120px auto 80px auto!important;
+}
+    
+.count-apple {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    margin: 40px auto;
+    line-height: 40px;
+    background-color: #222;
+}
+    
+.apple {
+    overflow-y: auto;
+    margin: -40px auto;
+    font-size: 25px;
+}
+/* -- end apple party :( --*/
+
 .transition {
     transition: color .6s, border .6s;
 }
