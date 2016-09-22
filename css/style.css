@@ -168,7 +168,7 @@ footer p a:hover {
 
 .thumb-down:hover {
     position: relative;
-    top: 2px;
+    bottom: 2px;
     cursor: pointer;
 }
 
@@ -327,7 +327,7 @@ textarea {
 }
 /* bloc des derniers nom inscrit au niveau de index.php */
 .last-names {
-    padding: 6px 6px 6px 6px;
+    padding: 20px 40px;
     width: 666px;
     margin: 66px auto;        
     color: #222;
