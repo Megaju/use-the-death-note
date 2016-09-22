@@ -8,6 +8,7 @@ $req->execute(array($_GET['news_number']));
 $donnees = $req->fetch();
 ?>
 
+
 <div class="new">
     <h3 class="new-title">
         <?php echo '#' . htmlspecialchars($donnees['id']) . ' ' . ($_SESSION['langue'] == 'fr' ? htmlspecialchars($donnees['title_fr']) : htmlspecialchars($donnees['title_en'])); ?>
