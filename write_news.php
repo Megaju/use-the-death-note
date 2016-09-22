@@ -1,5 +1,5 @@
 <?php 
-        if ($_POST['mdp'] == 'lol') {
+        if ($_POST['mdp'] == 'iamj') {
             ?>
             <?php include('includes/header.php'); ?>
             <form action="posts/post_news.php" method="post">
