@@ -111,8 +111,8 @@ a.button {
 }
     
 a.button:hover {
-    border-color: #0ff;
-    color: #0ff;
+    border-color: dodgerblue;
+    color: dodgerblue;
     transition: .6s;
 }
 

@@ -27,14 +27,14 @@
     <header>
         <h1><a href="index.php">Death note</a></h1>
         <!--<p id="slogan">Ryuk se modernise un peu et a décidé de mettre en ligne un death note virtuel.. il le partage avec nous, pauvres mortels que nous sommes... bonne écriture à tous !</p>-->
-        <p id="slogan">Ryuk s'ennuyait un peu... il décida de créer un Death Note en ligne pour s'amuser un peu. Bonne écriture et réfléchisait bien aux conséquences de vos actes...</p>
+        <p id="slogan">Ryuk s'ennuyait comme à son habitude. Il décida alors de créer un Death Note en ligne pour s'amuser un peu. Bonne écriture et réfléchisait bien aux conséquences de vos actes...</p>
             <nav>
                 <ul>
                     <li><a href="index.php">couverture</a></li>
                     <li><a href="how-to-use-it.php">How_to_use_it</a></li>
                     <li><a href="deathnote.php">écrire_un_nom</a></li>
-                    <li><a href="news.php">actualités</a></li>
                     <li><a href="topofdeath.php">top_10_des_éxécutions</a></li>
+                    <li><a href="news.php">actualités</a></li>
                     <li><a href="apple.php">pommes</a></li>
                 </ul>
             </nav>
