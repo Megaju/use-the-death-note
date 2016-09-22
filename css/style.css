@@ -118,6 +118,14 @@ a.button:hover {
     transition: color .6s, border .6s;
 }
 
+.transition-6s {
+    transition: color .6s, border .6s;
+}
+
+.transition-3s {
+    transition: color .3s, border .3s;
+}
+
 footer p a {
     font-size: 1em;
     display: block;

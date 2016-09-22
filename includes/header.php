@@ -30,12 +30,12 @@
         <p id="slogan">Ryuk s'ennuyait comme à son habitude. Il décida alors de créer un Death Note en ligne pour s'amuser un peu. Bonne écriture et réfléchisait bien aux conséquences de vos actes...</p>
             <nav>
                 <ul>
-                    <li <?php if($current_page=='index'){echo'class="current"';} ?>><a href="index.php" class="transition">couverture</a></li>
-                    <li <?php if($current_page=='useit'){echo'class="current"';} ?>><a href="how-to-use-it.php" class="transition">How_to_use_it</a></li>
-                    <li <?php if($current_page=='deathnote'){echo'class="current"';} ?>><a href="deathnote.php" class="transition">écrire_un_nom</a></li>
-                    <li <?php if($current_page=='top'){echo'class="current"';} ?>><a href="topofdeath.php" class="transition">top_10_des_éxécutions</a></li>
-                    <li <?php if($current_page=='news'){echo'class="current"';} ?>><a href="news.php" class="transition">actualités</a></li>
-                    <li <?php if($current_page=='apple'){echo'class="current"';} ?>><a href="apple.php" class="transition">pommes</a></li>
+                    <li <?php if($current_page=='index'){echo'class="current"';} ?>><a href="index.php" class="transition-3s">couverture</a></li>
+                    <li <?php if($current_page=='useit'){echo'class="current"';} ?>><a href="how-to-use-it.php" class="transition-3s">How_to_use_it</a></li>
+                    <li <?php if($current_page=='deathnote'){echo'class="current"';} ?>><a href="deathnote.php" class="transition-3s">écrire_un_nom</a></li>
+                    <li <?php if($current_page=='top'){echo'class="current"';} ?>><a href="topofdeath.php" class="transition-3s">top_10_des_éxécutions</a></li>
+                    <li <?php if($current_page=='news'){echo'class="current"';} ?>><a href="news.php" class="transition-3s">actualités</a></li>
+                    <li <?php if($current_page=='apple'){echo'class="current"';} ?>><a href="apple.php" class="transition-3s">pommes</a></li>
                 </ul>
             </nav>
     </header>
