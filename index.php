@@ -9,7 +9,7 @@
     if($_SESSION['langue'] == 'fr') { 
 ?>
    <!-- SITE FR -->
-   <a href="deathnote.php" class="button">OUVRIR LE DEATHNOTE</a>
+   <a href="deathnote.php" class="button transition">OUVRIR LE DEATHNOTE</a>
 
     <div class="last-names">
         <h2>Les 6 derniers noms inscrits</h2>

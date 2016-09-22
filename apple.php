@@ -15,7 +15,7 @@
     ?>
 </p>
 
-<a href="posts/give_an_apple.php" class="button give-an-apple">DONNER UNE POMME À RYUK !</a>
+<a href="posts/give_an_apple.php" class="button give-an-apple transition">DONNER UNE POMME À RYUK !</a>
 
 <style>
     .give-an-apple {

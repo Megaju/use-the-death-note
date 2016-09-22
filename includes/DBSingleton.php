@@ -12,13 +12,13 @@ class DBSingleton
     {
     //simply stores connections values, without opening connection
 
-        if(self::$inst == NULL){
+        if($bdd == NULL){
            new DBSingleton();
         }
-        return self::$inst;
+        return $bdd;
     }
     private function __construct(){
-     self::$inst = new \PDO('mysql:host=localhost;dbname=deathnote;charset=utf8', 'root', 'facesimplon');
+     $bdd = new PDO('mysql:host=localhost;dbname=deathnote;charset=utf8', 'root', 'facesimplon');
     }
 
 }

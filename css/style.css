@@ -95,25 +95,27 @@ a.actu {
 
 a.button {
     display: block;
-    width: 30%;
+    width: 300px;
     height: 120px;
     margin: 50px auto;
     text-align: center;
     line-height: 120px;
     color: #e22;
-    font-size: 24px;
+    font-size: 100%;
     font-weight: 500;
     text-decoration: none;
     background-color: #444;
     outline: 6px solid #444;
     border: 1px dashed #e22;
-    transition: .6s;
 }
     
 a.button:hover {
     border-color: dodgerblue;
     color: dodgerblue;
-    transition: .6s;
+}
+
+.transition {
+    transition: color .6s, border .6s;
 }
 
 footer p a {
@@ -123,12 +125,10 @@ footer p a {
     color: #fff;
     text-decoration: none;
     cursor: none;
-    transition: 1s;
 }
 
 footer p a:hover {
     color: #f00;
-    transition: 1s;
 }
 
 .thumbs {
