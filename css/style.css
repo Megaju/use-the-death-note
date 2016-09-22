@@ -27,14 +27,14 @@ body {
 header {
     padding: 20px;
     background-color: #333;
-    border-bottom: 1px dashed red;
-    border-top: 1px dashed red;
+    border-bottom: 1px dashed #e22;
+    border-top: 1px dashed #e22;
 }
 
 section {
     width: 75%;
     outline: 10px solid rgba(0, 0, 0, 0.5);
-    border: 1px dashed red;
+    border: 1px dashed #e22;
     margin: 20px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -44,7 +44,7 @@ aside {
     width: 25%;
     height: 100vh;
     outline: 10px solid rgba(0, 0, 0, 0.5);
-    border: 1px dashed red;
+    border: 1px dashed #e22;
     margin: 20px;
     padding: 20px;
     background-image: url(../images/rules.jpg);
@@ -59,8 +59,8 @@ footer {
     background-color: #333;
     height: 30vh;
     text-align: center;
-    border-top: 1px dashed red;
-    border-bottom: 1px dashed red;
+    border-top: 1px dashed #e22;
+    border-bottom: 1px dashed #e22;
 }
 
 /* ----- TEXT ----- */
@@ -100,13 +100,13 @@ a.button {
     margin: 50px auto;
     text-align: center;
     line-height: 120px;
-    color: red;
+    color: #e22;
     font-size: 24px;
     font-weight: 500;
     text-decoration: none;
     background-color: #444;
     outline: 6px solid #444;
-    border: 1px dashed red;
+    border: 1px dashed #e22;
     transition: .6s;
 }
     
@@ -151,8 +151,8 @@ footer p a:hover {
 }
 
 .thumb-up {
-    color: dodgerblue;
-    border: 1px solid dodgerblue;
+    color: #090;
+    border: 1px solid #090;
 }
 
 .thumb-up:hover {
@@ -162,8 +162,8 @@ footer p a:hover {
 }
 
 .thumb-down {
-    color: firebrick;
-    border: 1px solid firebrick;
+    color: #900;
+    border: 1px solid #900;
 }
 
 .thumb-down:hover {
@@ -195,7 +195,7 @@ nav ul li a {
 }
 
 nav ul li:hover a {
-    color: red;
+    color: #e22;
 }
 
 /* nav pagination */
@@ -264,7 +264,7 @@ textarea {
     margin: 50px auto;
     background-color: #222;
     color: #eee;
-    border: 1px dashed red;
+    border: 1px dashed #e22;
     outline: 6px solid #222;
 }
     
