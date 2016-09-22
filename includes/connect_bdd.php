@@ -17,7 +17,8 @@ class DBSingleton
         return self::$bdd;
     }
     private function __construct(){
-     self::$bdd = new PDO('mysql:host=localhost;dbname=DB_DEATHNOTE;charset=utf8', 'root', 'facesimplon');
+     //self::$bdd = new PDO('mysql:host=localhost;dbname=DB_DEATHNOTE;charset=utf8', 'root', 'facesimplon');
+     self::$bdd = new PDO('mysql:host=localhost;dbname=DB_DEATHNOTE;charset=utf8', 'root', 'iamj');
     }
 }
 
