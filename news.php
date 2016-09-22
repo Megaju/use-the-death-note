@@ -2,10 +2,13 @@
 
 <!-- Listes des 6 dernières nouvelles -->
 <?php
-            // Récupération des 6 dernières news
-            $reponse = $bdd->query('SELECT id, title_fr, title_en, content_fr, content_en, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin\') AS date_creation FROM news ORDER BY id DESC LIMIT 0, 6');
+            
+            include('includes/pagination_new.php');
 
-            // /!\IMPORTANT/!\ Affichage de chaque message (données protégées par htmlspecialchars) /!\IMPORTANT/!\
+            // Récupération des 6 dernières news
+            $reponse = $bdd->query('SELECT id, title_fr, title_en, content_fr, content_en, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin\') AS date_creation FROM news ORDER BY ID DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+
+            // Affichage des messages
             while ($donnees = $reponse->fetch())
             {   
                 echo '<div class="new">' .
@@ -26,5 +29,27 @@
             $reponse->closeCursor();
 
             ?>
+            
+            <!-- PAGINATION -->
+            <ul class="pagination">
+                <!-- precedent -->
+                <?php
+                    echo '<li><a href="?p=' . ($current - 1) . '">' . '&laquo;' . '</a></li>';   
+                ?>
+                <!-- numeros -->
+                <?php
+                    for($i=1; $i<=$nbPage; $i++){
+                        if($i == $current) {
+                            echo '<li class="active"><a href="?p=' . $i . '">' . $i . '</a></li>';
+                        } else {
+                            echo '<li><a href="?p=' . $i . '">' . $i . '</a></li>';
+                        }
+                    }
+                ?>
+                <!-- suivant -->
+                <?php
+                    echo '<li><a href="?p=' . ($current + 1) . '">' . '&raquo;' . '</a></li>';   
+                ?>
+            </ul>
 
 <?php include('includes/footer.php'); ?>
