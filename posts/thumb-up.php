@@ -7,13 +7,13 @@ include('../includes/connect_bdd.php');
 $req = $bdd->prepare('UPDATE deathnote SET note=note+1 WHERE ID='. $_POST['note'] .'');
 $req->execute(array($_POST['note']));
 
-header('refresh: 3; url=/deathnote/index.php');
+header('refresh: 3; url=/deathnote/topofdeath.php');
 
 ?>
 
 
 <h2>Merci d'avoir voté pour cette mort...</h2>
-<p>Vous allez être redirigé dans un instant vers l'accueil.</p>
+<p>Vous allez être redirigé dans un instant.</p>
 <p><i>Si après 3 secondes vous êtes toujours là, actualisez.</i></p>
 
 
