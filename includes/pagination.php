@@ -6,7 +6,8 @@ $req = $bdd->query('SELECT COUNT(*) AS total FROM deathnote');
 $result = $req->fetch();
 $total = $result['total'];
 
-$nbPage = ceil($total/$perPage); //ceil arrondis au supérieur.
+// arrondis au supérieur.
+$nbPage = ceil($total/$perPage); 
 
 // on vérifie l'existance de 'p' et on vérifie quelle n'est pas vide et que c'est bien
 // un chiffre avec ctype_digit.

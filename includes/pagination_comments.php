@@ -18,7 +18,7 @@ if (isset($_GET['p']) && !empty($_GET['p']) && ctype_digit($_GET['p']) == 1) {
     }
 } else {
     $current = 1; //page courante par défaut
-
+}
 // le 1er noms de la page
 $firstOfPage = ($current-1)*$perPage;
 

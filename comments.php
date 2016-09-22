@@ -26,59 +26,35 @@ $donnees = $req->fetch();
 </div>
 
 
+
 <!-- COMMENTAIRES -->
 <section class="new">
 <h2>Commentaires</h2>
-<?php
-$req->closeCursor(); // IMPORTANT : on libère le curseur pour la prochaine requête
+<?php 
+    // on prépare la pagination ici
+    include('includes/pagination_comments.php');
+    $req->closeCursor();
     
-    
-// PAGINATION MESSAGES
-include('includes/pagination_comments.php');
-
-    
-// RECUPERATION DES COMMENTAIRES
-$req = $bdd->prepare('SELECT author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment FROM comments WHERE id_news = ? ORDER BY date_comment DESC LIMIT ' . $firstOfPage . ',' . $perPage);
-$req->execute(array($_GET['news_number']));
-
-while ($donnees = $req->fetch())
-{
+    // RECUPERATION DES COMMENTAIRES
+    $req = $bdd->prepare('SELECT author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment FROM comments WHERE id_news = ? ORDER BY date_comment DESC LIMIT ' . $firstOfPage . ',' . $perPage);
+    $req->execute(array($_GET['news_number']));
+    // boucle pour afficher tout les messages
+    while ($donnees = $req->fetch())
+    {
 ?>
-
-<div class="comment">
-<p class="user"><strong><?php echo htmlspecialchars($donnees['author']); ?></strong> le <?php echo $donnees['date_comment']; ?></p>
-<p><?php echo nl2br(htmlspecialchars($donnees['comment'])); ?></p>
-</div>
-
-<?php
-} // Fin de la boucle des commentaires
-$req->closeCursor();
+    <!-- un bloc commentaire -->
+    <div class="comment">
+        <p class="user"><strong><?php echo htmlspecialchars($donnees['author']); ?></strong> le <?php echo $donnees['date_comment']; ?></p>
+        <p><?php echo nl2br(htmlspecialchars($donnees['comment'])); ?></p>
+    </div>
+<?php    
+    } // Fin de la boucle des commentaires
+    $req->closeCursor();
 ?>
 
 
-<!-- PAGINATION -->
-<ul class="pagination">
-    <!-- precedent -->
-    <?php
-        echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . ($current - 1) . '">' . '&laquo;' . '</a></li>';   
-    ?>
-    <!-- numeros -->
-    <?php
-        for($i=1; $i<=$nbPage; $i++){
-            if($i == $current) {
-                echo '<li class="active"><a href="?news_number=' . $_GET['news_number'] . '&p=' . $i . '">' . $i . '</a></li>';
-            } else {
-                echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . $i . '">' . $i . '</a></li>';
-            }
-        }
-    ?>
-    <!-- suivant -->
-    <?php
-        echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . ($current + 1) . '">' . '&raquo;' . '</a></li>';   
-    ?>
-</ul>
 
-<!-- formulaire d'envoie de message --> <!-- données : id_news + author + comment + date_comment -->
+<!-- FORMULAIRE D'ENVOIE DE MESSAGE -->
 <form action="posts/post_comment.php" method="post">
     <label for="author">Auteur</label>
     <input type="text" name="author" id="author">
@@ -88,6 +64,27 @@ $req->closeCursor();
     <input type="hidden" name="id_news" id="id_news" value="<?php echo $_GET['news_number'] ?>">
     <input type="submit">
 </form>
+
+
+<!-- PAGINATION -->
+<ul class="pagination">
+    <?php
+    // precedent
+        echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . ($current - 1) . '">' . '&laquo;' . '</a></li>';   
+    
+    // numeros
+        for($i=1; $i<=$nbPage; $i++){
+            if($i == $current) {
+                echo '<li class="active"><a href="?news_number=' . $_GET['news_number'] . '&p=' . $i . '">' . $i . '</a></li>';
+            } else {
+                echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . $i . '">' . $i . '</a></li>';
+            }
+        }
+    
+    // suivant
+        echo '<li><a href="?news_number=' . $_GET['news_number'] . '&p=' . ($current + 1) . '">' . '&raquo;' . '</a></li>';   
+    ?>
+</ul>
 
 </section>
 

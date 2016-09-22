@@ -1,3 +1,4 @@
+<!-- PANNEAU DE CONNECTION POUR POUVOIR ECRIRE DES NEWS -->
 <?php include('includes/header.php'); ?>
     <section class="motdepasse">
     <h2>PAGE PROTÉGÉ PAR MOT DE PASSE</h2>
