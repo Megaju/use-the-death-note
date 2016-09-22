@@ -30,12 +30,12 @@
         <p id="slogan">Ryuk s'ennuyait comme à son habitude. Il décida alors de créer un Death Note en ligne pour s'amuser un peu. Bonne écriture et réfléchisait bien aux conséquences de vos actes...</p>
             <nav>
                 <ul>
-                    <li><a href="index.php">couverture</a></li>
-                    <li><a href="how-to-use-it.php">How_to_use_it</a></li>
-                    <li><a href="deathnote.php">écrire_un_nom</a></li>
-                    <li><a href="topofdeath.php">top_10_des_éxécutions</a></li>
-                    <li><a href="news.php">actualités</a></li>
-                    <li><a href="apple.php">pommes</a></li>
+                    <li <?php if($current_page=='index'){echo'class="current"';} ?>><a href="index.php" class="transition">couverture</a></li>
+                    <li <?php if($current_page=='useit'){echo'class="current"';} ?>><a href="how-to-use-it.php" class="transition">How_to_use_it</a></li>
+                    <li <?php if($current_page=='deathnote'){echo'class="current"';} ?>><a href="deathnote.php" class="transition">écrire_un_nom</a></li>
+                    <li <?php if($current_page=='top'){echo'class="current"';} ?>><a href="topofdeath.php" class="transition">top_10_des_éxécutions</a></li>
+                    <li <?php if($current_page=='news'){echo'class="current"';} ?>><a href="news.php" class="transition">actualités</a></li>
+                    <li <?php if($current_page=='apple'){echo'class="current"';} ?>><a href="apple.php" class="transition">pommes</a></li>
                 </ul>
             </nav>
     </header>

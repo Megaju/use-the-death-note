@@ -1,4 +1,9 @@
-    <?php include('includes/header.php'); ?>
+<?php 
+    // PAGE COURANTE
+    $current_page = "top";
+
+    include('includes/header.php'); 
+?>
     
     <?php include('includes/pagination.php'); ?>
 

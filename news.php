@@ -1,4 +1,11 @@
-<?php include('includes/header.php'); ?>
+<?php 
+    // PAGE COURANTE
+    $current_page = "news";
+
+    include('includes/header.php'); 
+?>
+
+
 <div class="no-flex">
 <!-- Listes des 6 dernières nouvelles -->
 <?php

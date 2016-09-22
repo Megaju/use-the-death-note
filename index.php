@@ -1,4 +1,7 @@
-<?php 
+<?php
+    // PAGE COURANTE
+    $current_page = "index";
+
     include('includes/header.php'); 
     $firstOfPage = 0;
     $perPage = 6;

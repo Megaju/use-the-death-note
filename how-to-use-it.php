@@ -1,4 +1,11 @@
-<?php include('includes/header.php'); ?>
+<?php 
+    // PAGE COURANTE
+    $current_page = "useit";
+
+    include('includes/header.php'); 
+?>
+
+
 <div class="no-flex">
 <!-- I -->
 <?php

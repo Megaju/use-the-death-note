@@ -1,4 +1,9 @@
-<?php include('includes/header.php'); ?>
+<?php 
+    // PAGE COURANTE
+    $current_page = "apple";
+
+    include('includes/header.php');
+?>
 
 <div class="no-flex">
 

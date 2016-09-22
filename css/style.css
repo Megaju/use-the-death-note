@@ -194,7 +194,7 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-nav ul li:hover a {
+nav ul li:hover a, nav ul li.current a {
     color: #e22;
 }
 

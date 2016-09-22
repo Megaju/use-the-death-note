@@ -1,4 +1,7 @@
-    <?php 
+    <?php
+        // PAGE COURANTE
+        $current_page = "deathnote";
+
         include('includes/header.php');
         include('includes/pagination.php');
     ?>
